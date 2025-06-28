@@ -16,8 +16,9 @@ A repository dedicated to exploring and building versatile AI agents using LangC
 6.  [Agentic Frameworks Used](#6-agentic-frameworks-used)
 7.  [Tools and Capabilities](#7-tools-and-capabilities)
 8.  [Running Demos](#8-running-demos)
-9.  [Contributing](#9-contributing)
-10. [License](#10-license)
+9.  [Code Linting and Formatting with Ruff](#9-code-linting-and-formatting-with-ruff)
+10. [Contributing](#10-contributing)
+11. [License](#11-license)
 
 -----
 
@@ -118,6 +119,7 @@ You'll know it's active when your terminal prompt changes (e.g., `(.venv) yourus
 ├── .uv/                  # uv's cache and internal files (managed by uv)
 ├── .venv/                # Python virtual environment (managed by uv)
 ├── demos/                # Directory for various agent demos
+├── playground/           # Experimental scripts, notebooks, and quick tests
 ├── src/                  # Core modules, reusable components, and custom tools
 │   ├── agents/
 │   ├── tools/
@@ -193,7 +195,52 @@ python main.py
 
 We will provide clear, step-by-step guides for each demo, including any specific environment variables or configurations required.
 
-## 9\. Contributing
+## 9\. Code Linting and Formatting with Ruff
+
+We use [`ruff`](https://docs.astral.sh/ruff/) for fast, comprehensive Python linting and code formatting.
+
+### Installing Ruff
+
+Ruff is included in the `[dev]` dependency group. If you haven't already, install all dev dependencies:
+
+```bash
+uv sync
+```
+
+### Basic Usage
+
+- **Check code for lint issues:**
+  ```bash
+  ruff check src playground demos tests
+  ```
+
+- **Automatically fix fixable issues:**
+  ```bash
+  ruff check src playground demos tests --fix
+  ```
+
+- **Format code (like `black`):**
+  ```bash
+  ruff format src playground demos tests
+  ```
+
+- **Check the entire project:**
+  ```bash
+  ruff check .
+  ```
+
+### Configuration
+
+You can customize Ruff's behavior in `pyproject.toml` or a `.ruff.toml` file.
+
+### Tips
+
+- Integrate Ruff with your editor for real-time linting.
+- Add Ruff to pre-commit hooks for automatic checks before each commit.
+
+For more details, see the [Ruff documentation](https://docs.astral.sh/ruff/).
+
+## 10\. Contributing
 
 We welcome contributions to this project\! If you'd like to contribute, please follow these steps:
 
@@ -206,7 +253,7 @@ We welcome contributions to this project\! If you'd like to contribute, please f
 
 Please ensure your code adheres to the existing style and conventions. We use `ruff` for linting and formatting (part of our `dev` dependencies).
 
-## 10\. License
+## 11\. License
 
 This project is licensed under the MIT License - see the [`LICENSE`](./LICENSE) file for details.
 
