@@ -1,0 +1,114 @@
+[project]
+name = "agents"
+version = "0.1.0"
+description = "A versatile AI agent development environment, supporting diverse LLMs and tools via LangChain and other frameworks."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    # Core LangChain Components
+    "langchain-community>=0.3.20",          # Core LangChain functionalities and integrations for various tools, document loaders, etc.
+    "langchain-experimental>=0.3.4",        # Experimental LangChain features, often precursors to community or core integrations.
+    "langgraph>=0.3.18",                    # Framework for building robust, stateful LLM applications with cycles and human-in-the-loop.
+    "langgraph-checkpoint-sqlite>=2.0.6",   # SQLite-based checkpointing for LangGraph, enabling state persistence.
+    "langsmith>=0.3.18",                    # Platform for debugging, monitoring, and testing LLM applications and agents.
+
+    # LLM Integrations (LangChain Specific)
+    "langchain-anthropic>=0.3.10",          # LangChain integration for Anthropic's Claude models.
+    "langchain-google-genai>=0.0.11",       # LangChain integration for Google's Gemini models (often used outside Vertex AI directly from Google AI Studio/PaLM API).
+    "langchain-openai>=0.3.9",              # LangChain integration for OpenAI's GPT models.
+    "langchain-huggingface>=0.0.3",         # LangChain integration for models available on Hugging Face (often open-source).
+    "langchain-cohere>=0.1.1",              # LangChain integration for Cohere's language models.
+    "langchain-perplexity>=0.1.1",          # LangChain integration for Perplexity AI's online LLMs, known for search and citations.
+    "langchain-google-vertexai>=0.0.1",     # LangChain integration for Google Cloud's Vertex AI generative models (Gemini, Codey, embeddings, etc.).
+
+    # LLM Integrations (Direct SDKs - useful even if using LangChain wrappers)
+    "anthropic>=0.49.0",                    # Official Python SDK for interacting directly with Anthropic's API.
+    "google-generativeai>=0.8.5",           # Official Python SDK for interacting directly with Google's Generative AI API (Gemini).
+    "openai>=1.68.2",                       # Official Python SDK for interacting directly with OpenAI's API (can also be configured for Perplexity's API).
+    "cohere>=5.4.0",                        # Official Python SDK for interacting directly with Cohere's API.
+    "transformers>=4.41.2",                 # Hugging Face library for state-of-the-art machine learning models (e.g., for local inference or fine-tuning).
+    "google-cloud-aiplatform>=1.96.0",      # Official Google Cloud Python client for Vertex AI, for broader ML platform interaction beyond just LLMs.
+
+    # Unified LLM API (Highly Recommended for generality)
+    "litellm>=1.35.0",                      # Provides a unified API interface to over 100+ LLM providers, simplifying model switching.
+
+    # Agentic Frameworks
+    "autogen-agentchat>=0.4.9.2",           # Core component of AutoGen for defining and orchestrating multi-agent conversations.
+    "autogen-ext[grpc,mcp,ollama,openai]>=0.4.9.2", # Extensions for AutoGen, enabling communication via gRPC, Model Context Protocol (MCP), and integration with Ollama/OpenAI.
+    "openai-agents>=0.0.15",                # Likely a specific library related to OpenAI's agent capabilities or a custom agent implementation.
+    "crewai>=0.30.0",                       # Framework for orchestrating role-playing autonomous AI agents for collaborative task execution.
+    "llama-index>=0.11.0",                  # Data framework for LLM applications, especially strong in Retrieval Augmented Generation (RAG) and data indexing for agents.
+
+    # Web Scraping / Data Extraction
+    "bs4>=0.0.2",                           # Beautiful Soup 4, a library for pulling data out of HTML and XML files (web scraping).
+    "lxml>=5.3.1",                          # Fast and feature-rich library for processing XML and HTML.
+    "playwright>=1.51.0",                   # Library for browser automation, enabling sophisticated web interaction for agents.
+    "unstructured>=0.14.0",                 # Library for parsing and extracting structured content from various unstructured documents (PDFs, DOCX, etc.).
+    "python-docx>=1.1.2",                   # Library for creating, reading, and updating Microsoft Word (.docx) files.
+    "openpyxl>=3.1.2",                      # Library for reading and writing Excel 2010 xlsx/xlsm/xltx/xltm files.
+
+    # Document Handling
+    "pypdf>=5.4.0",                         # A pure-Python PDF library capable of splitting, merging, cropping, and transforming PDF pages.
+    "pypdf2>=3.0.1",                        # An older PDF library; `pypdf` is generally the more maintained and preferred option now.
+
+    # General Utilities & Tools
+    "python-dotenv>=1.0.1",                 # Loads environment variables from a `.env` file into `os.environ`.
+    "requests>=2.32.3",                     # An elegant and simple HTTP library for making web requests.
+    "httpx>=0.28.1",                        # A fast, modern HTTP client for Python, supporting both synchronous and asynchronous requests.
+    "ipywidgets>=8.1.5",                    # Interactive HTML widgets for Jupyter notebooks and other Python environments.
+    "markdown>=3.5.2",                      # A Python implementation of John Gruber's Markdown.
+    "plotly>=6.0.1",                        # An interactive graphing library for creating various types of charts and plots.
+    "psutil>=7.0.0",                        # Cross-platform library for retrieving information on running processes and system utilization.
+    "wikipedia>=1.4.0",                     # Python wrapper for the Wikipedia API, allowing agents to query Wikipedia.
+
+    # UI/Demo Tools
+    "gradio>=5.22.0",                       # Allows rapid creation of interactive web interfaces for machine learning models, APIs, or any Python function.
+
+    # Specific Tool/API Integrations
+    "google-api-python-client>=2.170.0",    # Google API client library for Python, enabling interaction with various Google services.
+    "google-auth>=2.40.2",                  # Google authentication library for Python, handling OAuth2 flows.
+    "polygon-api-client>=1.14.5",           # Client library for Polygon.io API, providing financial market data.
+    "sendgrid>=6.11.0",                     # Official SendGrid API library for sending emails.
+    "speedtest-cli>=2.1.3",                  # Command line interface for testing internet bandwidth using speedtest.net.
+    "semantic-kernel>=1.25.0",              # Microsoft's open-source SDK that lets you easily combine LLMs with conventional programming languages.
+    "mcp-server-fetch>=2025.1.17",          # Likely related to fetching data/models from an MCP (Model Context Protocol) server.
+    "mcp[cli]>=1.5.0",                      # Command Line Interface tools for Model Context Protocol.
+    "smithery>=0.1.0",                      # Likely a custom or niche library, potentially related to AI "crafting" or tool use.
+
+    # Robustness
+    "tenacity>=8.4.1",                      # Easy-to-use library for adding retry logic and backoff strategies to functions, essential for API calls.
+
+    # Data Handling (General)
+    "pandas>=2.2.2",                        # Powerful data manipulation and analysis library, especially for tabular data.
+    "numpy>=1.26.4",                        # Fundamental package for numerical computing in Python, providing array objects.
+
+    # API / Web App Framework (if agents are part of a larger app)
+    "fastapi>=0.111.0",                     # Modern, fast (high-performance) web framework for building APIs with Python 3.8+.
+    "uvicorn[standard]>=0.30.1",            # ASGI server for running FastAPI and other asynchronous web applications.
+
+    # Foundational Packaging Tool (often a transitive dependency, good to include if directly used)
+    "setuptools>=78.1.0",                   # Comprehensive library for building, distributing, and installing Python packages.
+
+    # Local LLM Runtime (Optional, for direct local model use)
+    "ollama>=0.2.0",                        # Python client for Ollama, allowing easy execution of large language models locally.
+    # "llama-cpp-python>=0.2.85",           # For running GGUF models locally with Python bindings for llama.cpp (requires compilation setup).
+    # "ctranslate2>=3.24.0",                # For running Transformer models efficiently on CPU/GPU with CTranslate2 (requires compilation setup).
+
+    # Database connectors (examples, add as needed for your data sources)
+    # "qdrant-client>=1.9.0",               # Client for Qdrant, a vector similarity search engine.
+    # "weaviate-client>=4.6.0",             # Client for Weaviate, an open-source vector database.
+    # "pinecone-client>=3.2.0",             # Client for Pinecone, a managed vector database.
+    # "chromadb>=0.5.0",                    # Lightweight, open-source vector database, good for local development.
+    # "pgvector>=0.2.0",                    # PostgreSQL extension for storing vector embeddings. (Requires PostgreSQL with pgvector)
+    # "psycopg2-binary>=2.9.9",             # PostgreSQL adapter for Python.
+    # "mysql-connector-python>=8.4.0",      # MySQL driver for Python.
+    # "sqlalchemy>=2.0.30",                 # Python SQL toolkit and Object Relational Mapper (ORM).
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",                    # IPython kernel for Jupyter notebooks and interactive Python development.
+    "ruff>=0.4.10",                         # Extremely fast Python linter and code formatter.
+    "mypy>=1.10.0",                         # Optional static type checker for Python.
+    "pytest>=8.2.2",                        # Popular testing framework for Python.
+]
