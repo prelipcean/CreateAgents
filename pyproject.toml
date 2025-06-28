@@ -108,7 +108,8 @@ dependencies = [
 [dependency-groups]
 dev = [
     "ipykernel>=6.29.5",                    # IPython kernel for Jupyter notebooks and interactive Python development.
-    "ruff>=0.4.10",                         # Extremely fast Python linter and code formatter.
+    "jupyter==1.1.1",                       # Meta-package for Jupyter (notebook, console, client, etc.) for interactive development.
+    "ruff>=0.9.4",                          # Extremely fast Python linter and code formatter.
     "mypy>=1.10.0",                         # Optional static type checker for Python.
     "pytest>=8.2.2",                        # Popular testing framework for Python.
 ]
