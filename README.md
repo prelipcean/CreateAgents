@@ -117,13 +117,7 @@ You'll know it's active when your terminal prompt changes (e.g., `(.venv) yourus
 .
 ├── .uv/                  # uv's cache and internal files (managed by uv)
 ├── .venv/                # Python virtual environment (managed by uv)
-├── demos/                # Directory for various agent demos (e.g., `web_research_agent`, `email_agent`)
-│   ├── web_research_agent/
-│   │   ├── main.py
-│   │   └── config.py
-│   └── email_agent/
-│       ├── agent.py
-│       └── tools.py
+├── demos/                # Directory for various agent demos
 ├── src/                  # Core modules, reusable components, and custom tools
 │   ├── agents/
 │   ├── tools/
