@@ -133,17 +133,44 @@ You'll know it's active when your terminal prompt changes (e.g., `(.venv) yourus
 
 ## 5\. Supported LLM Models and Providers
 
-This project is configured to work with a wide range of LLM providers and models, ensuring flexibility and broad applicability:
+This project is configured to work with a wide range of LLM providers and models, ensuring flexibility and broad applicability. Our dependency setup facilitates integration with various models through:
 
-  * **OpenAI**: GPT-3.5, GPT-4, etc. (via `openai`, `langchain-openai`)
-  * **Anthropic**: Claude models (via `anthropic`, `langchain-anthropic`)
-  * **Google Generative AI**: Gemini models (via `google-generativeai`, `langchain-google-genai`)
-  * **Google Cloud Vertex AI**: Access to Gemini, Codey, and custom models hosted on Google Cloud's AI platform (via `google-cloud-aiplatform`, `langchain-google-vertexai`)
-  * **Hugging Face**: Numerous open-source models (via `transformers`, `langchain-huggingface`)
-  * **Cohere**: Various Cohere models (via `cohere`, `langchain-cohere`)
-  * **Perplexity AI**: Online LLMs known for real-time search and citations (via `langchain-perplexity`)
-  * **LiteLLM**: A unified API for interacting with over 100+ LLM providers, offering unparalleled flexibility in switching models (via `litellm`).
-  * **Local LLMs (via Ollama)**: Support for running models locally using Ollama (via `ollama` and `autogen-ext`).
+  * **Key LLM Families (Direct Integration & LangChain)**:
+
+      * **Anthropic Claude**: Excels in reasoning, long-form content processing, and vision analysis with up to 200K token context windows (via `anthropic`, `langchain-anthropic`).
+      * **Mistral models**: Powerful open-source models with strong multilingual capabilities and exceptional reasoning abilities (via `langchain_mistralai`).
+      * **Google Gemini**: Advanced multimodal models with industry-leading 1M token context window and real-time information access (via `google-generativeai`, `langchain-google-genai`).
+      * **OpenAI GPT-o**: Leading omnimodal capabilities accepting text, audio, image, and video with enhanced reasoning (via `openai`, `langchain-openai`).
+      * **DeepSeek models**: Specialized in coding and technical reasoning with state-of-the-art performance on programming tasks.
+      * **AI21 Labs Jurassic**: Strong in academic applications and long-form content generation.
+      * **Inflection Pi**: Optimized for conversational AI with exceptional emotional intelligence.
+      * **Perplexity models**: Focused on accurate, cited answers for research applications (via `langchain-perplexity`).
+      * **Cohere models**: Specialized for enterprise applications with strong multilingual capabilities (via `cohere`, `langchain-cohere`).
+
+  * **Cloud Provider Gateways**: These offer managed API access to various models, often with enterprise-grade features and seamless integration within their cloud ecosystems.
+
+      * **Amazon Bedrock**: Unified API access to models from Anthropic, AI21, Cohere, Mistral, and others with deep AWS integration.
+      * **Azure OpenAI Service**: Enterprise-grade access to OpenAI and other models with robust security and Microsoft ecosystem integration.
+      * **Google Vertex AI**: Access to Gemini and other models with seamless Google Cloud integration (via `google-cloud-aiplatform`, `langchain-google-vertexai`).
+
+  * **Independent Platforms & Local/Open Source**:
+
+      * **Together AI**: Hosts 200+ open-source models with both serverless and dedicated GPU options.
+      * **Replicate**: Specializes in deploying multimodal open-source models with pay-as-you-go pricing.
+      * **Hugging Face Inference Endpoints**: Provides production deployment of thousands of open-source models with fine-tuning capabilities (via `transformers`, `huggingface-hub`, `langchain_huggingface`).
+      * **LiteLLM**: A unified API for interacting with over 100+ LLM providers, offering unparalleled flexibility in switching models (via `litellm`).
+      * **Local LLMs (via Ollama)**: Supports running models locally with ease (via `ollama`, `langchain-ollama`, and `autogen-ext`).
+
+### API keys reference table
+
+  | Provider        | Environment Variable         | Setup URL                                        | Free Tier?        |
+| :-------------- | :--------------------------- | :----------------------------------------------- | :---------------- |
+| OpenAI          | `OPENAI_API_KEY`             | [platform.openai.com](https://platform.openai.com/account/api-keys) | No                |
+| Hugging Face    | `HUGGINGFACE_API_KEY`   | [huggingface.co/settings/tokens](https://huggingface.co/settings/tokens) | Yes               |
+| Anthropic       | `ANTHROPIC_API_KEY`          | [console.anthropic.com](https://console.anthropic.com/settings/api-keys) | No                |
+| Google AI       | `GOOGLE_API_KEY`             | [aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey) | Yes               |
+| Google Vertex AI| `GOOGLE_APPLICATION_CREDENTIALS` | [cloud.google.com/vertex-ai](https://cloud.google.com/docs/authentication/application-default-credentials) | Yes (with limits) |
+| Replicate       | `REPLICATE_API_TOKEN`        | [replicate.com](https://replicate.com/account)    | No                |
 
 ## 6\. Agentic Frameworks Used
 
