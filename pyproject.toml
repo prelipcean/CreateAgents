@@ -20,6 +20,7 @@ dependencies = [
     "langchain-cohere>=0.1.1",              # LangChain integration for Cohere's language models.
     "langchain-perplexity>=0.1.1",          # LangChain integration for Perplexity AI's online LLMs, known for search and citations.
     "langchain-google-vertexai>=0.0.1",     # LangChain integration for Google Cloud's Vertex AI generative models (Gemini, Codey, embeddings, etc.).
+    "langchain-ollama>=0.1.2",              # LangChain integration for Ollama, a platform for running large language models locally.
 
     # LLM Integrations (Direct SDKs - useful even if using LangChain wrappers)
     "anthropic>=0.49.0",                    # Official Python SDK for interacting directly with Anthropic's API.
