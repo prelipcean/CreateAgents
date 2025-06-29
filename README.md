@@ -165,12 +165,32 @@ This project is configured to work with a wide range of LLM providers and models
 
   | Provider        | Environment Variable         | Setup URL                                        | Free Tier?        |
 | :-------------- | :--------------------------- | :----------------------------------------------- | :---------------- |
-| OpenAI          | `OPENAI_API_KEY`             | [platform.openai.com](https://platform.openai.com/account/api-keys) | No                |
-| Hugging Face    | `HUGGINGFACE_API_KEY`   | [huggingface.co/settings/tokens](https://huggingface.co/settings/tokens) | Yes               |
-| Anthropic       | `ANTHROPIC_API_KEY`          | [console.anthropic.com](https://console.anthropic.com/settings/api-keys) | No                |
-| Google AI       | `GOOGLE_API_KEY`             | [aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey) | Yes               |
-| Google Vertex AI| `GOOGLE_APPLICATION_CREDENTIALS` | [cloud.google.com/vertex-ai](https://cloud.google.com/docs/authentication/application-default-credentials) | Yes (with limits) |
-| Replicate       | `REPLICATE_API_TOKEN`        | [replicate.com](https://replicate.com/account)    | No                |
+| **OpenAI**          | `OPENAI_API_KEY`             | [platform.openai.com](https://platform.openai.com/account/api-keys) | No                |
+| **Hugging Face**    | `HUGGINGFACE_API_KEY`   | [huggingface.co/settings/tokens](https://huggingface.co/settings/tokens) | Yes               |
+| **Anthropic**       | `ANTHROPIC_API_KEY`          | [console.anthropic.com](https://console.anthropic.com/settings/api-keys) | No                |
+| **Google AI**       | `GOOGLE_API_KEY`             | [aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey) | Yes               |
+| **Google Vertex AI** | `GOOGLE_APPLICATION_CREDENTIALS` | [cloud.google.com/vertex-ai](https://cloud.google.com/docs/authentication/application-default-credentials) | Yes (with limits) |
+| **Replicate**       | `REPLICATE_API_TOKEN`        | [replicate.com](https://replicate.com/account)    | No                |
+
+### Vector stores reference table
+
+| Database              | Deployment Options     | License                | Notable Features                                                                                                    |
+|-----------------------|------------------------|------------------------|---------------------------------------------------------------------------------------------------------------------|
+| **Pinecone**              | Cloud-only             | Commercial             | Auto-scaling, enterprise security, monitoring, real-time index updates, purpose-built for high-dimensional data      |
+| **Milvus**                | Cloud, Self-hosted     | Apache 2.0             | HNSW/IVF indexing, multi-modal support, CRUD operations, distributed architecture, highly scalable                 |
+| **Weaviate**              | Cloud, Self-hosted     | BSD 3-Clause           | Graph-like structure, multi-modal support, semantic search, GraphQL API, built-in vectorization, hybrid search      |
+| **Qdrant**                | Cloud, Self-hosted     | Apache 2.0             | HNSW indexing, filtering optimization, JSON metadata, payload filtering, Rust-powered performance, cloud-native     |
+| **ChromaDB**              | Cloud, Self-hosted     | Apache 2.0             | Lightweight, easy setup, in-memory or persistent, Python-first, great for prototyping and smaller-to-medium scale |
+| **AnalyticDB-V**          | Cloud-only             | Commercial             | OLAP integration, SQL support, enterprise features, optimized for Alibaba Cloud ecosystem                          |
+| **pg_vector**             | Cloud, Self-hosted     | PostgreSQL License     | SQL support, PostgreSQL integration, efficient exact and approximate nearest neighbor search within PostgreSQL      |
+| **Vertex Vector Search**  | Cloud-only             | Commercial             | Easy setup, low latency, high scalability, Google Cloud integration, managed service                               |
+| **Vald** | Self-hosted            | Apache 2.0             | Highly scalable, distributed vector search engine, built on top of Faiss, focuses on stability and operations      |
+| **Deep Lake** | Cloud, Self-hosted     | Apache 2.0             | Stores vectors and other data formats (images, audio) in a queryable "tensor database," version control for data    |
+| **Elasticsearch** | Cloud, Self-hosted     | Apache 2.0 (basic) / Commercial (advanced features) | Full-text search and analytics, integrates vector search (k-NN) with existing search capabilities, flexible schema |
+| **Redis Stack (RedisGears + RediSearch)** | Cloud, Self-hosted | RSALv2 / SSPL (Redis core) / Apache 2.0 (modules) | In-memory data store, vector search as a module, fast for real-time applications, flexible data structures         |
+| **MongoDB Atlas Vector Search** | Cloud-only (Atlas) | Commercial             | Integrated with MongoDB Atlas, combines vector search with document database features, simplified development       |
+| **Vespa** | Cloud, Self-hosted     | Apache 2.0             | Open-source data serving engine, supports vector, lexical, and structured search, used by Yahoo! for large scale    |
+| **LanceDB** | Self-hosted, Cloud (integrations) | Apache 2.0             | Serverless, embedded vector database built with Rust, ideal for edge/local AI applications, integrates with cloud storage |
 
 ## 6\. Agentic Frameworks Used
 
