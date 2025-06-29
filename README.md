@@ -200,6 +200,21 @@ Our agents can leverage a diverse set of tools to interact with the world:
   * **UI/Demo**: `Gradio` for quickly building interactive web demos of agents.
   * **Foundational Packaging**: `setuptools` for core Python packaging mechanisms.
 
+### Model controlling parameters table
+
+| Parameter | Description | Typical Range | Best For |
+|---|---|---|---|
+| **Temperature** | Controls randomness in text generation | 0.0-1.0 (OpenAI, Anthropic); 0.0-2.0 (Gemini) | Lower (0.0-0.3): Factual tasks, Q&A; Higher (0.7+): Creative writing, brainstorming |
+| **Top-k** | Limits token selection to k most probable tokens | 1-100 | Lower values (1-10): More focused outputs; Higher values: More diverse completions |
+| **Top-p (Nucleus Sampling)** | Considers tokens until cumulative probability reaches threshold | 0.0-1.0 | Lower values (0.5): More focused outputs; Higher values (0.9): More exploratory responses |
+| **Max tokens** | Limits maximum response length | Model-specific | Controlling costs and preventing verbose outputs |
+| **Presence/frequency penalties** | Discourages repetition by penalizing tokens that have appeared | -2.0 to 2.0 | Longer content generation where repetition is undesirable |
+| **Stop sequences** | Tells model when to stop generating | Custom strings | Controlling exact ending points of generation |
+| **Seed** | Initializes the random number generator for reproducible outputs | Integer (e.g., 0, 42) | Reproducibility, A/B testing, debugging |
+| **Logit Bias** | Directly influences the probability of specific tokens appearing or being avoided | Model/API specific (e.g., -100 to 100) | Guiding specific vocabulary, preventing unwanted words, enforcing style |
+| **Context Window Size** | Maximum number of tokens (input + output) the model can consider | Model-specific (e.g., 4K, 8K, 32K, 128K) | Maintaining coherence over long interactions, processing large inputs |
+| **`do_sample`** | Boolean to enable/disable probabilistic sampling (vs. greedy decoding) | `True`/`False` | Ensuring purely deterministic output (set to `False`) |
+
 ## 8\. Running Demos
 
 This section will contain instructions on how to run specific agent demos within the `demos/` directory.
