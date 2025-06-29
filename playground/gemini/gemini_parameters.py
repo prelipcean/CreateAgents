@@ -131,7 +131,9 @@ print(
 try:
     # Send the user prompt to the Gemini model with the specified generation configuration and safety settings.
     response = gemini_model.generate_content(
-        user_prompt, generation_config=generation_config, safety_settings=safety_settings
+        user_prompt,
+        generation_config=generation_config,
+        safety_settings=safety_settings,
     )
     # Print the text content of the model's response.
     print(response.text)
