@@ -36,6 +36,15 @@ ollama ls
 ollama rm <model_name>
 ```
 
+## GIT
+
+### Revert to last commit after push on remote
+
+```
+git reset --hard HEAD~1
+git push origin HEAD --force
+```
+
 ## GOOGLE GEMINI
 
 ### Available Gemini Models that support 'generateContent'
